@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <style>
+        .toggler {
+            width: 500px;
+            height: 200px;
+            position: relative;
+        }
+
+        #button {
+            padding: .5em 1em;
+            text-decoration: none;
+        }
+
+        #effect {
+            width: 240px;
+            padding: 1em;
+            border: 1px solid #000;
+            background: #eee;
+            color: #333;
+        }
+
+        .newClass {
+            text-indent: 40px;
+            letter-spacing: .4em;
+            width: 410px;
+            height: 160px;
+            padding: 30px;
+            margin: 10px;
+            font-size: 1.1em;
+        }
+
+        p {
+            height: 200px;
+            width: 250px;
+        }
+    </style>
+    <script>
+        $(function () {
+            $("#button").on("click", function () {
+                $("#effect").addClass("newClass", 1000, callback);
+            });
+
+            function callback() {
+                setTimeout(function () {
+                    $("#effect").removeClass("newClass");
+                }, 2000);
+            }
+        });
+        $(document).ready(function () {
+            $("#btn1").click(function () {
+                $("#box").animate({ height: "300px" });
+            });
+            $("#btn2").click(function () {
+                $("#box").animate({ height: "100px" });
+            });
+        });
+
+    </script>
+</head>
+
+<body>
+    <div class="toggler">
+        <div id="effect" class="ui-corner-all">
+            Con este efecto le damos una nueva clase a
+            nuestro contenedor, de esta forma hace una transicion
+        </div>
+    </div>
+
+    <button id="button" class="ui-state-default ui-corner-all">Run Effect</button>
+    <p>JQuey efecct son metodos que nos proporciona Jquery para
+        hacer efectos y transiciones al activar eventos.
+        Como clic, keyUp, KeyPress. Que nos daran unas
+        transiciones a nuestro codigo HTML mediante el manejo del DOM.
+    </p>
+
+    <button id="btn1">Animate height</button>
+    <button id="btn2">Reset height</button>
+
+    <div id="box" style="background:#98bf21;height:100px;width:100px;margin:6px;"></div>
+
+</body>
+
+</html>
