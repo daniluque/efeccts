@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+<div style="border:1px solid;" >
+
+    <!-- COLOR ANIMATION -->
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <style>
+    .toggler { width: 500px; height: 200px; position: relative; }
+    #button1 { padding: .5em 1em; text-decoration: none; }
+    #effect1 { width: 240px; height: 170px; padding: 0.4em; position: relative; background: #fff; }
+    #effect h3 { margin: 0; padding: 0.4em; text-align: center; }
+  </style>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    var state = true;
+    $( "#button1" ).on( "click", function() {
+      if ( state ) {
+        $( "#effect1" ).animate({
+          backgroundColor: "#aa0000",
+          color: "#fff",
+          width: 500
+        }, 1000 );
+      } else {
+        $( "#effect" ).animate({
+          backgroundColor: "#fff",
+          color: "#000",
+          width: 240
+        }, 1000 );
+      }
+      state = !state;
+    });
+  } );
+  </script>
+</head>
+<body>
+ 
+<div class="toggler">
+  <div id="effect1" class="ui-widget-content ui-corner-all">
+    <h3 class="ui-widget-header ui-corner-all">Animate</h3>
+    <p>
+      Etiam libero neque, luctus a, eleifend nec, semper at, lorem. Sed pede. Nulla lorem metus, adipiscing ut, luctus sed, hendrerit vitae, mi.
+    </p>
+  </div>
+</div>
+<br>
+<button id="button1" class="ui-state-default ui-corner-all">Toggle Effect</button>
+ <br>
+</body>
+</html>
+
+
+    <!-- ELIMINAR CLASE -->
+
+
+
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>jQueryEffects</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <style>
+  .toggler { width: 500px; height: 200px; position: relative; }
+  #button2 { padding: .1em 1em; text-decoration: none; }
+  #effect2 { position: relative;  width: 500px;  padding: 1em;  letter-spacing: 0; font-size: 1.2em; border: 1px solid #000; background: #eee; color: #333; }
+  .newClass { text-indent: 40px; letter-spacing: .4em; width: 410px; height: 100px; padding: 30px; margin: 10px; font-size: 1.6em; }
+  </style>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#button2" ).on( "click", function() {
+      $( "#effect2" ).removeClass( "newClass", 1000, callback );
+    });
+ 
+    function callback() {
+      setTimeout(function() {
+        $( "#effect" ).addClass( "newClass" );
+      }, 1500 );
+    }
+  } );
+  </script>
+</head>
+<body>
+<div class="toggler">
+  <div id="effect2" class="newClass ui-corner-all">
+    Con este efecto le quitamos la clase anteriormente añadida a
+    nuestro contenedor, de esta forma hace una transicion.
+  </div>
+</div>
+<button style="margin-bottom:2em;" id="button2" class="ui-state-default ui-corner-all">Run Effect</button>
+</div>
+</body>
+</html>
